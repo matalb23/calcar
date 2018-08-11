@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+		<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/funciones.js"></script>
+    <title>Texto a calcar</title>
+</head>
+
+<body>
+
+
+	  Texto: <input type="text"  id="calcar" name="calcar"><br><br>
+    Tamaño: <input type="text"  id="tamanio" name="tamanio" value="50"><br><br>
+	 <input type="submit" id="enviar" value="Enviar">
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+	<script type="text/javascript">
+	  $("#enviar").on("click", function(event) {
+						var Observacion= $("[name='calcar']").val();
+						 setConfigValue("texto", Observacion);
+             var tamanio= $("[name='tamanio']").val();
+ 						 setConfigValue("tamanio", tamanio);
+						  window.location = "Mostrar.html";
+        });
+        //app.initialize();
+    </script>
+</body>
+
+</html>
